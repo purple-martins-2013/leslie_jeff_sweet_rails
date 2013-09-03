@@ -1,0 +1,6 @@
+<h3><%= @tag.name %></h3>
+<ul>
+  <% @tag.articles.each do |a| %>
+    <li><%= link_to a.title, "/#{a.url}" %></li>
+  <% end %>
+</ul>

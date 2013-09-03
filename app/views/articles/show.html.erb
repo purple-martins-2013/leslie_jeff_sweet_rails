@@ -1,7 +1,10 @@
 <article>
   <h1><%= @article.category.name %></h1>
   <h3><%= @article.title %></h3>
-  <p><%= @article.tags.map {|tag| tag.name }.join(", ") %></p>
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, "/tags/#{tag.name}/articles" %>
+    <%= ", " unless tag == @article.tags.last %>
+  <% end %>
   <hr/>
   <p><%= @article.description %></p>
 </article>

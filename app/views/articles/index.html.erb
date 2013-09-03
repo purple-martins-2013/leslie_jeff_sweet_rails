@@ -6,3 +6,11 @@
     <% end %>
   </ul>
 <% end %>
+
+<h3>Tags</h3>
+<ul>
+  <% @tags.each do |tag| %>
+    <li><%= link_to tag.name, "/tags/#{tag.name}/articles" %></li>
+  <% end %>
+</ul>
+

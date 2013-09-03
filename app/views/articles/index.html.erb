@@ -1,0 +1,8 @@
+<% @categories.each do |c| %>
+  <h3><%= c.name %></h3>
+  <ul>
+    <% c.articles.each do |a| %>
+      <li><%= link_to a.title, a.url %></li>
+    <% end %>
+  </ul>
+<% end %>

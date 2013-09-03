@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20130903171448) do
     t.string "title"
     t.text   "description"
     t.string "url"
-    t.string "category"
     t.string "tags"
   end
 

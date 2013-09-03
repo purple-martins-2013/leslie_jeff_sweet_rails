@@ -1,5 +1,5 @@
 <% @categories.each do |c| %>
-  <h3><%= c.name %></h3>
+  <h3><%= link_to c.name, "/categories/#{c.name.gsub(" ", "_")}/articles" %></h3>
   <ul>
     <% c.articles.each do |a| %>
       <li><%= link_to a.title, a.url %></li>

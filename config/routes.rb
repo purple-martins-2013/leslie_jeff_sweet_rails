@@ -5,6 +5,9 @@ SweetRails::Application.routes.draw do
   get 'articles/:month/:day/:year/:title' => "articles#redirect"
   get 'categories/:category_name/articles/:title' => "articles#show"
 
+  get 'categories/:name/articles' => "categories#index"
+  get 'tags/:name/articles' => "tags#index"
+
   root "articles#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

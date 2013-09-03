@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   def create
     params[:article][:category_id] = Category.find_or_create_by(name: params[:article][:category]).id
     article = Article.create!(article_params)
-    redirect_to "/categories/#{article.category.name.gsub(' ', '_')}/articles/#{article.title.gsub(' ', '-')}"
+    redirect_to "/categories/#{article.category.name.gsub(' ', '_')}/articles/#{article.title.downcase.gsub(' ', '-')}"
   end
 
   def show

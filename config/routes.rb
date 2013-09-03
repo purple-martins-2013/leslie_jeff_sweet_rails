@@ -1,4 +1,12 @@
 SweetRails::Application.routes.draw do
+
+  resources :articles, :only => [:new, :create, :index]
+
+  get 'articles/:month/:day/:year/:title' => "articles#redirect"
+  get 'categories/:category_name/articles/:title' => "articles#show"
+
+  root "articles#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
